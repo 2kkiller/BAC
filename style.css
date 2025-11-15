@@ -47,9 +47,11 @@ header.site-header {
   max-width: 100%;
   object-fit: contain;
 
-  border: 2px solid #800020; /* Burgundy border (optional) */
-  padding: 6px;
-  border-radius: 50px;       /* This makes the border oval */
+  background-color: #fff;    /* White background */
+  border: 3px solid #800020; /* Burgundy border */
+  border-radius: 50px;       /* Oval shape */
+  padding: 6px;              /* Space between logo and border */
+  display: block;
 }
 
 /* Mobile phones */
@@ -591,6 +593,7 @@ footer a:hover {
     font-size: 1.6rem;
   }
 }
+
 
 
 
