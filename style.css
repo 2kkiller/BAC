@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   color: #111;
-  background-color: #e0e5ec;
+  background-color: #ffffff;
   line-height: 1.7;
 }
 
@@ -26,7 +26,7 @@ ul {
    HEADER & NAVIGATION
 ============================= */
 header.site-header {
-  background: linear-gradient(to right, #002366, #29240b);
+  background: linear-gradient(to right, #800020, #4d0014);
   color: white;
   padding: 1rem 2rem;
   position: sticky;
@@ -61,8 +61,8 @@ nav {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #ffd700;
-  text-shadow: 0 0 5px rgba(0, 66, 128, 0.4);
+  color: #ffd1dc;
+  text-shadow: 0 0 5px rgba(128, 0, 32, 0.4);
 }
 
 /* Hamburger Menu */
@@ -105,7 +105,7 @@ nav#nav-menu.active {
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #002366, #493e00);
+  background: linear-gradient(to right, #800020, #4d0014);
   color: white;
 }
 
@@ -130,7 +130,7 @@ nav#nav-menu.active {
 }
 
 .section-center h2 {
-  color: #002366;
+  color: #800020;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -157,44 +157,44 @@ nav#nav-menu.active {
 }
 
 .btn {
-  background: linear-gradient(to right, #002366, #383002);
+  background: linear-gradient(to right, #800020, #4d0014);
   color: white;
   border: none;
 }
 
 .btn:hover {
-  background: linear-gradient(to right, #001744, #524603);
+  background: linear-gradient(to right, #630018, #3b0010);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
-  border: 2px solid #002366;
-  color: #002366;
+  border: 2px solid #800020;
+  color: #800020;
   background: transparent;
 }
 
 .btn-outline:hover {
-  background: #002366;
+  background: #800020;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* =============================
    SECTION BACKGROUNDS
 ============================= */
 .vision-section {
-  background: #f9f9f9;
+  background: #ffffff;
 }
 .mission-section {
-  background: #fef6e4;
+  background: #fff5f7;
 }
 .values-section {
-  background: #f1f5ff;
+  background: #f8f0f4;
 }
 .cta-section {
-  background: linear-gradient(to right, #3f3602, #002366);
+  background: linear-gradient(to right, #4d0014, #800020);
   color: white;
 }
 
@@ -212,27 +212,28 @@ nav#nav-menu.active {
 .value-list li {
   margin-bottom: 1rem;
   padding: 0.75rem;
-  border-left: 4px solid #0c55e7;
+  border-left: 4px solid #800020;
   border-radius: 4px;
   text-align: left;
-  background: #f1f5ff;
+  background: #fff0f4;
   transition: all 0.3s ease-in-out;
 }
 
 .values-section li:hover,
 .about-values ul.value-list li:hover,
 .value-list li:hover {
-  background: #37446d;
-  border-left-color: #ffd700;
+  background: #800020;
+  color: white;
+  border-left-color: #ffd1dc;
   transform: translateX(5px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* =============================
    FOOTER
 ============================= */
 footer {
-  background: linear-gradient(to right, #002366, #011797);
+  background: linear-gradient(to right, #800020, #4d0014);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -256,7 +257,7 @@ footer {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #002366;
+  color: #800020;
 }
 
 .contact-form form {
@@ -270,16 +271,16 @@ footer {
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #bfa0a8;
   border-radius: 6px;
   font-size: 1rem;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #002366;
+  border-color: #800020;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 35, 100, 0.1);
+  box-shadow: 0 0 0 3px rgba(128,0,32,0.1);
 }
 
 /* =============================
@@ -293,7 +294,7 @@ footer {
 
 .service-card {
   background-color: #fff;
-  border-left: 5px solid #002366;
+  border-left: 5px solid #800020;
   padding: 1.5rem;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
@@ -301,8 +302,8 @@ footer {
 
 .service-card:hover {
   transform: translateY(-5px);
-  border-left-color: #ffcc00;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: #ffd1dc;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 /* =============================
@@ -315,7 +316,7 @@ footer {
 
 .blog-card {
   background: #ffffff;
-  border-left: 5px solid #002366;
+  border-left: 5px solid #800020;
   padding: 1.5rem;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
@@ -323,7 +324,7 @@ footer {
 
 .blog-card:hover {
   transform: translateY(-5px);
-  border-left-color: #ffcc00;
+  border-left-color: #ffd1dc;
 }
 
 /* =============================
@@ -389,4 +390,91 @@ footer {
   .blog-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+
+
+/* =============================
+   GOLD ACCENTS
+============================= */
+
+/* Nav Hover Accent */
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #d4af37;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Buttons */
+.btn-outline {
+  border: 2px solid #d4af37;
+  color: #800020;
+}
+
+.btn-outline:hover {
+  background: #d4af37;
+  color: #4d0014;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+/* Values & cards */
+.values-section li,
+.value-list li,
+.about-values ul.value-list li {
+  border-left: 4px solid #d4af37;
+}
+
+.values-section li:hover,
+.value-list li:hover,
+.about-values ul.value-list li:hover {
+  border-left-color: #f1d77a;
+}
+
+/* Service cards */
+.service-card {
+  border-left: 5px solid #d4af37;
+}
+
+.service-card:hover {
+  border-left-color: #f1d77a;
+}
+
+/* Blog cards */
+.blog-card {
+  border-left: 5px solid #d4af37;
+}
+
+.blog-card:hover {
+  border-left-color: #f1d77a;
+}
+
+/* Section title gold underline */
+.section-center h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-center h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 60px;
+  margin: 0.5rem auto 0;
+  background-color: #d4af37;
+  border-radius: 2px;
+}
+
+/* Contact form focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Footer links with gold hover */
+footer a:hover {
+  color: #d4af37;
 }
