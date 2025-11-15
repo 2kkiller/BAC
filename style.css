@@ -501,6 +501,97 @@ footer a:hover {
 
 
 
+/* =======================================
+   MOBILE IMPROVEMENTS FOR HEADERS & BUTTONS
+   (Apply on very small devices)
+======================================= */
+@media (max-width: 600px) {
+
+  /* Header spacing */
+  header.site-header {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Logo smaller and tighter */
+  .logo {
+    height: 45px;
+    border-radius: 35px;
+    padding: 4px;
+  }
+
+  /* Navigation layout */
+  .nav-container {
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Hero text easier to read */
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Section titles */
+  .section-center h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-center p {
+    font-size: 1rem;
+  }
+
+  /* Buttons full-width and easier to tap */
+  .btn,
+  .btn-outline {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+  }
+
+  /* Reduce animation on mobile */
+  .btn:hover,
+  .btn-outline:hover {
+    transform: none;
+  }
+
+  /* Smaller spacing for section padding */
+  section,
+  .section-center {
+    padding: 2rem 1rem;
+  }
+
+  /* Contact form spacing */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.6rem;
+  }
+}
+
 
 
 
