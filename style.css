@@ -43,7 +43,7 @@ header.site-header {
 
 .logo {
   height: 80px;
-  color: white; 
+  background-color: white; 
 }
 
 nav {
@@ -479,4 +479,5 @@ footer {
 footer a:hover {
   color: #d4af37;
 }
+
 
