@@ -41,9 +41,19 @@ header.site-header {
   flex-wrap: wrap;
 }
 
-.logo {
-  height: 60px;
-  background-color: white; 
+/* Default (laptop/desktop) */
+.logo img {
+  width: auto;
+  height: 70px; /* Adjust to your taste */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Mobile phones */
+@media screen and (max-width: 600px) {
+  .logo img {
+    height: 50px; /* Smaller for phone */
+  }
 }
 
 nav {
@@ -479,6 +489,7 @@ footer {
 footer a:hover {
   color: #d4af37;
 }
+
 
 
 
