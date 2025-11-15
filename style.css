@@ -1,17 +1,13 @@
 /* =============================
    RESET & BASE STYLES
 ============================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: Garamond, serif;
-  line-height: 1.7;
+  margin: 0;
+  padding: 0;
   color: #111;
   background-color: #ffffff;
+  line-height: 1.7;
 }
 
 a {
@@ -22,15 +18,17 @@ a {
 
 ul {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /* =============================
-   MOBILE-FIRST HEADER & NAV
+   HEADER & NAVIGATION
 ============================= */
 header.site-header {
   background: linear-gradient(to right, #800020, #4d0014);
   color: white;
-  padding: 0.75rem 1rem;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -41,46 +39,35 @@ header.site-header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 .logo {
-  height: 45px;
-  max-width: 100%;
-  object-fit: contain;
-  border: 2px solid #800020;
-  border-radius: 35px;
-  padding: 4px;
+  height: 80px;
 }
 
 nav {
-  width: 100%;
+  display: flex;
 }
 
 .nav-links {
-  display: none; /* hidden by default for mobile */
-  flex-direction: column;
-  width: 100%;
-  gap: 1rem;
-  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-links li a {
   color: white;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.5rem 0;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #d4af37;
-  text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+  color: #ffd1dc;
+  text-shadow: 0 0 5px rgba(128, 0, 32, 0.4);
 }
 
 /* Hamburger Menu */
 .hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -104,8 +91,12 @@ nav {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-nav#nav-menu.active .nav-links {
-  display: flex;
+nav#nav-menu {
+  transition: max-height 0.3s ease;
+}
+
+nav#nav-menu.active {
+  display: block;
 }
 
 /* =============================
@@ -113,72 +104,56 @@ nav#nav-menu.active .nav-links {
 ============================= */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 4rem 2rem;
   background: linear-gradient(to right, #800020, #4d0014);
   color: white;
 }
 
 .hero h1 {
-  font-size: 1.75rem;
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 0.95rem;
-  max-width: 100%;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 /* =============================
-   SECTIONS
+   REUSABLE CENTERED SECTION
 ============================= */
 .section-center {
-  max-width: 100%;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
   text-align: center;
 }
 
 .section-center h2 {
-  font-size: 1.6rem;
   color: #800020;
-  margin-bottom: 0.75rem;
-  position: relative;
-  display: inline-block;
-}
-
-.section-center h2::after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 60px;
-  margin: 0.5rem auto 0;
-  background-color: #d4af37;
-  border-radius: 2px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .section-center p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 /* =============================
    BUTTONS
 ============================= */
-.btn,
-.btn-outline {
+.btn, .btn-outline {
   display: inline-block;
-  width: 100%;
-  padding: 0.9rem 1.2rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-top: 0.75rem;
-  text-align: center;
   transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .btn {
@@ -189,38 +164,55 @@ nav#nav-menu.active .nav-links {
 
 .btn:hover {
   background: linear-gradient(to right, #630018, #3b0010);
-  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
-  border: 2px solid #d4af37;
+  border: 2px solid #800020;
   color: #800020;
   background: transparent;
 }
 
 .btn-outline:hover {
-  background: #d4af37;
-  color: #4d0014;
-  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+  background: #800020;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* =============================
    SECTION BACKGROUNDS
 ============================= */
-.vision-section { background: #ffffff; }
-.mission-section { background: #fff5f7; }
-.values-section { background: #f8f0f4; }
-.cta-section { background: linear-gradient(to right, #4d0014, #800020); color: white; }
+.vision-section {
+  background: #ffffff;
+}
+.mission-section {
+  background: #fff5f7;
+}
+.values-section {
+  background: #f8f0f4;
+}
+.cta-section {
+  background: linear-gradient(to right, #4d0014, #800020);
+  color: white;
+}
 
 /* =============================
-   VALUES & SERVICE CARDS
+   VALUES LIST
 ============================= */
+.values-section ul,
+.about-values ul.value-list,
+.value-list {
+  padding-left: 1rem;
+}
+
 .values-section li,
-.value-list li,
-.about-values ul.value-list li {
+.about-values ul.value-list li,
+.value-list li {
   margin-bottom: 1rem;
   padding: 0.75rem;
-  border-left: 4px solid #d4af37;
+  border-left: 4px solid #800020;
   border-radius: 4px;
   text-align: left;
   background: #fff0f4;
@@ -228,47 +220,13 @@ nav#nav-menu.active .nav-links {
 }
 
 .values-section li:hover,
-.value-list li:hover,
-.about-values ul.value-list li:hover {
+.about-values ul.value-list li:hover,
+.value-list li:hover {
   background: #800020;
   color: white;
-  border-left-color: #f1d77a;
+  border-left-color: #ffd1dc;
   transform: translateX(5px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.service-card,
-.blog-card {
-  background: #ffffff;
-  border-left: 5px solid #d4af37;
-  padding: 1.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-.service-card:hover,
-.blog-card:hover {
-  border-left-color: #f1d77a;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* =============================
-   CONTACT FORM
-============================= */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.85rem;
-  font-size: 1rem;
-  border: 1px solid #bfa0a8;
-  border-radius: 6px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #d4af37;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
 }
 
 /* =============================
@@ -281,35 +239,142 @@ footer {
   padding: 1rem;
 }
 
-footer a:hover {
-  color: #d4af37;
+/* =============================
+   CONTACT PAGE
+============================= */
+.contact-intro,
+.contact-details,
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.contact-intro h1,
+.contact-details h2,
+.contact-form h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #800020;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #bfa0a8;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #800020;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(128,0,32,0.1);
 }
 
 /* =============================
-   RESPONSIVE LAYOUTS (TABLET/DESKTOP)
+   SERVICES PAGE
 ============================= */
-@media (min-width: 601px) {
-  .nav-links {
-    display: flex !important;
-    flex-direction: row;
-    gap: 1.5rem;
-    margin-top: 0;
-    width: auto;
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: #fff;
+  border-left: 5px solid #800020;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-left-color: #ffd1dc;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* =============================
+   BLOG PAGE
+============================= */
+.blog-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.blog-card {
+  background: #ffffff;
+  border-left: 5px solid #800020;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  border-left-color: #ffd1dc;
+}
+
+/* =============================
+   RESPONSIVE LAYOUTS
+============================= */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .hamburger { display: none; }
+  .hamburger {
+    display: flex;
+  }
 
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1rem; }
+  nav#nav-menu {
+    display: none;
+    width: 100%;
+  }
 
-  .section-center h2 { font-size: 2rem; }
-  .section-center p { font-size: 1.1rem; }
+  nav#nav-menu.active {
+    display: block;
+  }
 
-  .btn,
-  .btn-outline {
-    width: auto;
-    padding: 0.75rem 1.5rem;
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
     font-size: 1rem;
+  }
+
+  .btn, .btn-outline {
+    width: 100%;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .service-list,
+  .blog-list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -324,5 +389,182 @@ footer a:hover {
   .service-list,
   .blog-list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+/* =============================
+   GOLD ACCENTS
+============================= */
+
+/* Nav Hover Accent */
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #d4af37;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Buttons */
+.btn-outline {
+  border: 2px solid #d4af37;
+  color: #800020;
+}
+
+.btn-outline:hover {
+  background: #d4af37;
+  color: #4d0014;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+/* Values & cards */
+.values-section li,
+.value-list li,
+.about-values ul.value-list li {
+  border-left: 4px solid #d4af37;
+}
+
+.values-section li:hover,
+.value-list li:hover,
+.about-values ul.value-list li:hover {
+  border-left-color: #f1d77a;
+}
+
+/* Service cards */
+.service-card {
+  border-left: 5px solid #d4af37;
+}
+
+.service-card:hover {
+  border-left-color: #f1d77a;
+}
+
+/* Blog cards */
+.blog-card {
+  border-left: 5px solid #d4af37;
+}
+
+.blog-card:hover {
+  border-left-color: #f1d77a;
+}
+
+/* Section title gold underline */
+.section-center h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-center h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 60px;
+  margin: 0.5rem auto 0;
+  background-color: #d4af37;
+  border-radius: 2px;
+}
+
+/* Contact form focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* Footer links with gold hover */
+footer a:hover {
+  color: #d4af37;
+}
+
+/* =======================================
+   MOBILE IMPROVEMENTS FOR HEADERS & BUTTONS
+   (Apply on very small devices)
+======================================= */
+@media (max-width: 600px) {
+
+  /* Header spacing */
+  header.site-header {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Logo smaller and tighter */
+  .logo {
+    height: 45px;
+    border-radius: 35px;
+    padding: 4px;
+  }
+
+  /* Navigation layout */
+  .nav-container {
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 0.75rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Hero text easier to read */
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Section titles */
+  .section-center h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-center p {
+    font-size: 1rem;
+  }
+
+  /* Buttons full-width and easier to tap */
+  .btn,
+  .btn-outline {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+  }
+
+  /* Reduce animation on mobile */
+  .btn:hover,
+  .btn-outline:hover {
+    transform: none;
+  }
+
+  /* Smaller spacing for section padding */
+  section,
+  .section-center {
+    padding: 2rem 1rem;
+  }
+
+  /* Contact form spacing */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+
+  .contact-form h2 {
+    font-size: 1.6rem;
   }
 }
