@@ -42,7 +42,7 @@ header.site-header {
 }
 
 .logo {
-  height: auto;
+  height: 60px;
   background-color: white; 
 }
 
@@ -479,6 +479,7 @@ footer {
 footer a:hover {
   color: #d4af37;
 }
+
 
 
 
