@@ -1,101 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services | Bunmi Adelugba & Co.</title>
-   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/2kkiller/BAC/refs/heads/main/bac%20logo.jpg"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — Bunmi Adelugba & Co.</title>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <!-- Header -->
+<body class="page-fade-in">
   <header class="site-header">
-    <div class="nav-container">
-      <img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo"/>
-      <nav>
-        <ul class="nav-links">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <span class="brand-text">Bunmi Adelugba & Co.</span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Open navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav" id="mainNav">
+        <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="services.html" class="nav-link current">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Services Header -->
-    <section class="services-header section-center" data-aos="fade-up">
-      <h1>Our Services</h1>
-      <p>Explore the full range of professional services offered by Bunmi Adelugba & Co.</p>
-    </section>
+    <section class="section container" data-aos="fade-up">
+      <h1 class="section-title">Services</h1>
+      <p class="lead">Practical accounting and tax services tailored to your organisation.</p>
 
-    <!-- Services List -->
-    <section class="service-list section-center">
-      <div class="service-card" data-aos="fade-right">
-        <h3>Statutory & Internal Audits</h3>
-        <p>We conduct thorough, standards-compliant audits that provide transparency and strengthen your financial credibility.</p>
-      </div>
+      <div class="service-list">
+        <article id="tax" class="service" data-aos="fade-right" data-aos-delay="120">
+          <h3>Tax Compliance & Advisory</h3>
+          <p>We guide tax filings, planning, and dispute resolution.</p>
+        </article>
 
-      <div class="service-card" data-aos="fade-left">
-        <h3>Accounting System Design & Bookkeeping</h3>
-        <p>From setup to daily entries, we offer fully outsourced accounting services tailored to your business model.</p>
-      </div>
+        <article id="bookkeeping" class="service" data-aos="fade-left" data-aos-delay="220">
+          <h3>Bookkeeping & Records</h3>
+          <p>Accurate records and reporting to support management decisions.</p>
+        </article>
 
-      <div class="service-card" data-aos="fade-right">
-        <h3>Tax Compliance & Advisory</h3>
-        <p>Let us handle PAYE, VAT, CIT, and other tax obligations while offering strategic tax planning insights.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-left">
-        <h3>Financial & Management Consulting</h3>
-        <p>We advise on budgeting, cost optimization, forecasting, and strategic planning for growth and risk control.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-right">
-        <h3>NGO Audit Services</h3>
-        <p>We specialize in donor compliance, grant auditing, and risk assessments tailored to nonprofit organizations.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-left">
-        <h3>Payroll Structuring & Administration</h3>
-        <p>Ensure accurate payroll computation, tax withholding, and reporting that keeps your business compliant.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-right">
-        <h3>Business Registration & CAC Services</h3>
-        <p>We handle company formation, business name registration, annual return filing, and corporate secretarial duties.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-left">
-        <h3>QuickBooks Installation & Training</h3>
-        <p>We provide setup, configuration, and customized training for QuickBooks accounting software.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-up">
-        <h3>Staff Recruitment & Training</h3>
-        <p>We support you in hiring and training finance staff with practical, job-ready skills and compliance knowledge.</p>
+        <article id="advisory" class="service" data-aos="fade-up" data-aos-delay="320">
+          <h3>Financial Advisory</h3>
+          <p>Business planning, forecasting and financial modelling services.</p>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Bunmi Adelugba & Co. — Chartered Accountants & Tax Practitioners.</p>
+  <footer class="site-footer" data-aos="fade-up" data-aos-delay="100">
+    <div class="container footer-inner">
+      <div>© <span id="year3"></span> Bunmi Adelugba & Co.</div>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </footer>
 
-  <!-- AOS Animation -->
-   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-   <script>AOS.init({ duration: 1000 });</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
