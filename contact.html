@@ -1,172 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Bunmi Adelugba & Co.</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | Bunmi Adelugba & Co.</title>
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac_logo-removebg-preview%20(1).png"/>
+<link rel="stylesheet" href="style.css"/>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-<body class="page-fade-in">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Logo" class="logo">
-        <span class="brand-text">Bunmi Adelugba & Co.</span>
-      </a>
+<body>
+<header class="site-header">
+<div class="nav-container">
+<img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo" />
+<nav>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-      <button id="navToggle" class="nav-toggle" aria-label="Open navigation">
-        <span class="hamburger"></span>
-      </button>
+<main>
+<section class="contact-intro section-center" data-aos="fade-up">
+<h1>Get in Touch</h1>
+<p>Have a question or need our services? Reach out — we're here to help.</p>
+</section>
 
-      <nav class="nav" id="mainNav">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" class="nav-link current">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<section class="contact-details section-center" data-aos="fade-left">
+<h2>Contact Info</h2>
+<p><strong>Address:</strong> 
+<a href="https://maps.app.goo.gl/ZNtd5uc1q1JJEHAJ9" target="_blank">
+Plot 6, Ekikunam Street, Utako, Abuja.
+</a>
+</p>
+<p><strong>Phone:</strong> 08061785959, 08023256750, 08067310338</p>
+<p><strong>Email:</strong> 
+<a href="mailto:badecharteredaccts.ng@gmail.com">badecharteredaccts.ng@gmail.com</a>
+</p>
+</section>
 
-  <main>
-    <section class="section container" data-aos="fade-up">
-      <h1>Contact us</h1>
-      <p class="lead">Send a short message and we will get back to you.</p>
+<section class="contact-form section-center" data-aos="fade-right">
+<h2>Send Us a Message</h2>
+<form id="contact-form">
+<label for="name">Full Name:</label>
+<input type="text" id="name" name="name" required>
 
-      <form id="contactForm" class="contact-form" data-aos="fade-up" data-aos-delay="120" novalidate>
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" required>
-        </label>
+<label for="email">Email Address:</label>
+<input type="email" id="email" name="email" required>
 
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required>
-        </label>
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone">
 
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="6" required></textarea>
-        </label>
+<label for="message">Your Message:</label>
+<textarea id="message" name="message" rows="5" required></textarea>
 
-        <div class="form-actions">
-          <button type="submit" class="btn primary">Send message</button>
-          <div id="formStatus" aria-live="polite"></div>
-        </div>
-      </form>
+<button type="submit" class="btn">Submit</button>
+</form>
 
-      <div class="contact-info" data-aos="fade-left" data-aos-delay="250">
-        <h3>Address</h3>
-        <p>Office address goes here</p>
-        <h3>Email</h3>
-        <p>info@yourfirm.com</p>
-      </div>
-    </section>
-  </main>
+<p id="response"></p>
+</section>
+</main>
 
-  <footer class="site-footer" data-aos="fade-up" data-aos-delay="100">
-    <div class="container footer-inner">
-      <div>© <span id="year4"></span> Bunmi Adelugba & Co.</div>
-      <nav class="footer-nav">
-        <a href="privacy.html">Privacy</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </footer>
+<footer>
+<p>© 2025 Bunmi Adelugba & Co. — Chartered Accountants & Tax Practitioners.</p>
+</footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    AOS.init({ duration: 700, once: true });
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000 });
+
+document.addEventListener('DOMContentLoaded', function () {
+const form = document.getElementById('contact-form');
+const response = document.getElementById('response');
+
+// ✅ Your live Google Apps Script Web App URL
+const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbznurfbG19BgH7IV4BjaCF7BY-w2uT6ODXuoWbrhXv1dUlFWJZxIQtJHk85_I3NkOE/exec';
+
+if (form) {
+form.addEventListener('submit', async function (e) {
+e.preventDefault();
+
+const payload = {
+name: form.name.value.trim(),
+email: form.email.value.trim(),
+phone: form.phone.value.trim(),
+message: form.message.value.trim()
+};
+
+response.style.color = "#002366";
+response.textContent = "Sending message...";
+
+try {
+await fetch(API_ENDPOINT, {
+method: 'POST',
+mode: 'no-cors',  // bypass CORS
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(payload)
+});
+
+response.style.color = "green";
+response.textContent = "✅ Thank you! Your message has been sent successfully.";
+form.reset();
+} catch (err) {
+console.error('Submission error:', err);
+response.style.color = "red";
+response.textContent = "❌ Submission failed. Please try again or email us directly.";
+}
+});
+}
+});
+</script>
 </body>
 </html>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Bunmi Adelugba & Co.</title>
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="page-fade-in">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Logo" class="logo">
-        <span class="brand-text">Bunmi Adelugba & Co.</span>
-      </a>
-
-      <button id="navToggle" class="nav-toggle" aria-label="Open navigation">
-        <span class="hamburger"></span>
-      </button>
-
-      <nav class="nav" id="mainNav">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" class="nav-link current">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="section container" data-aos="fade-up">
-      <h1>Contact us</h1>
-      <p class="lead">Send a short message and we will get back to you.</p>
-
-      <form id="contactForm" class="contact-form" data-aos="fade-up" data-aos-delay="120" novalidate>
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" required>
-        </label>
-
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required>
-        </label>
-
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="6" required></textarea>
-        </label>
-
-        <div class="form-actions">
-          <button type="submit" class="btn primary">Send message</button>
-          <div id="formStatus" aria-live="polite"></div>
-        </div>
-      </form>
-
-      <div class="contact-info" data-aos="fade-left" data-aos-delay="250">
-        <h3>Address</h3>
-        <p>Office address goes here</p>
-        <h3>Email</h3>
-        <p>info@yourfirm.com</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" data-aos="fade-up" data-aos-delay="100">
-    <div class="container footer-inner">
-      <div>© <span id="year4"></span> Bunmi Adelugba & Co.</div>
-      <nav class="footer-nav">
-        <a href="privacy.html">Privacy</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    AOS.init({ duration: 700, once: true });
-  </script>
-</body>
-</html>
