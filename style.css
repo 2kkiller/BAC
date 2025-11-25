@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   color: #111;
-  background-color: #f3f4f6; /* Light Gray/Off-White base background */
+  background-color: #fff; /* Keep body background white */
   line-height: 1.7;
 }
 
@@ -25,9 +25,9 @@ ul {
 ================================= */
 
 @keyframes pulseBorder {
-    0% { box-shadow: 0 0 0 0 rgba(0, 31, 92, 0.4); } /* Navy Shadow */
-    70% { box-shadow: 0 0 0 5px rgba(0, 31, 92, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 31, 92, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.4); }
+    70% { box-shadow: 0 0 0 5px rgba(128, 0, 32, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
 }
 
 @keyframes float {
@@ -39,9 +39,9 @@ ul {
 /* =============================
    HEADER & NAVIGATION
 ============================= */
-/* Header with Dynamic Navy Gradient */
+/* Header with Dynamic Burgundy Gradient */
 header.site-header {
-  background: linear-gradient(90deg, #001F5C 0%, #001236 70%, #002A7D 100%); /* Navy Gradient */
+  background: linear-gradient(90deg, #800020 0%, #4d0013 70%, #990025 100%);
   color: white;
   padding: 1rem 2rem;
   position: sticky;
@@ -72,8 +72,8 @@ header.site-header {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #FFC400; /* Bright Gold accent */
-  text-shadow: 0 0 8px rgba(255, 196, 0, 0.7);
+  color: #ffd700; /* Gold on hover or active */
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Brighter gold shadow */
 }
 
 /* Hamburger (mobile menu icon) styles retained */
@@ -94,13 +94,13 @@ header.site-header {
 /* =============================
    HERO SECTION
 ============================= */
-/* Hero with Dynamic Navy Gradient */
+/* Hero with Dynamic Burgundy Gradient */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #001F5C, #002A7D, #001236); /* Navy Gradient */
+  background: linear-gradient(135deg, #800020, #a00028, #4d0013); 
   color: white;
-  animation: pulseBorder 4s infinite;
+  animation: pulseBorder 4s infinite; /* Dynamic animation added */
 }
 
 .hero h1 {
@@ -138,33 +138,33 @@ header.site-header {
   text-align: center;
 }
 
-/* Gradient Button (Primary Navy) */
+/* Gradient Button (Primary Burgundy) */
 .btn {
-  background: linear-gradient(to right, #001F5C, #002A7D); /* Navy Gradient */
+  background: linear-gradient(to right, #800020, #a00028); 
   color: white;
   border: none;
-  box-shadow: 0 4px 10px rgba(0, 31, 92, 0.4);
+  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.4);
 }
 
 .btn:hover {
-  background: linear-gradient(to right, #003399, #00174D);
-  transform: translateY(-3px);
+  background: linear-gradient(to right, #c10030, #5e0017);
+  transform: translateY(-3px); /* Increased lift */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Outline Button (Gold Accent Border) */
 .btn-outline {
   border: 2px solid;
-  border-image: linear-gradient(to right, #FFC400, #F0B300); /* Gold gradient border */
+  border-image: linear-gradient(to right, #ffd700, #ffc400); /* Gold gradient border */
   border-image-slice: 1;
-  color: #001F5C; /* Navy text */
+  color: #800020; /* Burgundy text */
   background: transparent;
 }
 
 .btn-outline:hover {
-  background: #FFC400; /* Gold background on hover */
-  color: #001F5C; /* Navy text on hover */
-  transform: translateY(-3px);
+  background: #800020; /* Burgundy background on hover */
+  color: #ffd700; /* Gold text on hover */
+  transform: translateY(-3px); /* Increased lift */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -172,25 +172,25 @@ header.site-header {
    SECTION BACKGROUNDS
 ============================= */
 .vision-section {
-  background: #FFFFFF; /* Pure white for high contrast */
+  background: #f9f9f9;
 }
 .mission-section {
-  background: #F3F4F6; /* Light Gray for differentiation */
+  background: #fff8e1;
 }
 .values-section {
-  background: #FFFFFF; /* Pure white */
+  background: #fdf0f2;
 }
 .cta-section {
-  background: linear-gradient(to right, #001236, #001F5C); /* Darker Navy to Navy */
+  background: linear-gradient(to right, #4d0013, #800020);
   color: white;
 }
 
 /* =============================
    FOOTER
 ============================= */
-/* Footer with Dynamic Navy Gradient */
+/* Footer with Dynamic Burgundy Gradient */
 footer {
-  background: linear-gradient(90deg, #001F5C 0%, #001236 70%, #002A7D 100%);
+  background: linear-gradient(90deg, #800020 0%, #4d0013 70%, #990025 100%);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -203,111 +203,109 @@ footer {
 .contact-intro h1,
 .contact-details h2,
 .contact-form h2 {
-  color: #001F5C; /* Navy */
+  color: #800020; /* Burgundy */
 }
 
 .contact-details a {
-  color: #001F5C; /* Navy */
+  color: #800020; /* Burgundy */
 }
 
 .contact-details a:hover {
-  color: #FFC400; /* Gold on hover */
-  text-shadow: 0 0 5px rgba(255, 196, 0, 0.5);
+  color: #ffd700; /* Gold on hover */
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 .contact-form label {
-  color: #001F5C; /* Navy */
+  color: #800020; /* Burgundy */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #001F5C;
-  box-shadow: 0 0 0 3px rgba(0, 31, 92, 0.3);
+  border-color: #800020;
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.3); /* Softer focus shadow */
 }
 
 /* =============================
    SERVICES PAGE
 ============================= */
 .services-header h1 {
-  color: #001F5C; /* Navy */
+  color: #800020; /* Burgundy */
 }
 
 .service-card {
   /* Added subtle float animation */
   animation: float 6s ease-in-out infinite;
-  background-color: #FFFFFF; /* White card background */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   border-left: 5px solid;
-  border-image: linear-gradient(to bottom, #001F5C, #003399); /* Navy gradient border */
+  border-image: linear-gradient(to bottom, #800020, #c10030); /* Burgundy gradient border */
   border-image-slice: 1;
 }
 
 .service-card:nth-child(even) {
-    animation-delay: 0.5s;
+    animation-delay: 0.5s; /* Stagger animation */
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  border-left-color: #FFC400; /* Gold hover accent */
+  transform: translateY(-8px); /* Increased lift on hover */
+  border-left-color: #ffd700;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .service-card h3 {
-  color: #001F5C;
+  color: #800020;
 }
 
 /* =============================
    ABOUT & HOME VALUES LIST
 ============================= */
 .section-center h2 {
-  color: #001F5C; /* Navy */
+  color: #800020; /* Burgundy */
 }
 
 .value-list li {
-  background: #F3F4F6; /* Light Gray background for list item */
+  background: #fdf0f2;
   padding: 0.75rem;
   margin-bottom: 1rem;
   border-left: 4px solid;
-  border-image: linear-gradient(to bottom, #FFC400, #F0B300); /* Gold gradient border */
+  border-image: linear-gradient(to bottom, #ffd700, #ffc400); /* Gold gradient border */
   border-image-slice: 1;
   text-align: left;
   transition: all 0.3s ease-in-out;
 }
 
 .value-list li:hover {
-  background: #E5E7EB; /* Slightly darker gray on hover */
-  border-left-color: #FFC400;
-  transform: translateX(10px);
-  box-shadow: 0 4px 10px rgba(0, 31, 92, 0.1);
+  background: #f3e6e8;
+  border-left-color: #ffd700;
+  transform: translateX(10px); /* Increased horizontal movement */
+  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.1);
 }
 
 /* ========================================
    BLOG PAGE STYLES
 =========================================== */
 .blog-header h1 {
-  color: #001F5C;
+  color: #800020;
 }
 
 .blog-card {
   /* Added subtle float animation */
   animation: float 6s ease-in-out infinite;
-  background-color: #FFFFFF; /* White card background */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-left: 5px solid #001F5C; /* Navy border */
+  border-left: 5px solid #800020;
 }
 
 .blog-card:nth-child(odd) {
-    animation-delay: 0.3s;
+    animation-delay: 0.3s; /* Stagger animation */
 }
 
 .blog-card:hover {
   transform: translateY(-8px);
-  border-left-color: #FFC400; /* Gold hover accent */
+  border-left-color: #ffd700;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .blog-card h3 {
-  color: #001F5C;
+  color: #800020;
 }
 
 /* =============================
@@ -351,17 +349,18 @@ footer {
 
   .btn, .btn-outline {
     width: 100%;
+    /* Ensure buttons stack neatly */
     display: block;
     margin-left: 0;
     margin-right: 0;
   }
 
   section {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem; /* Consistent section padding on mobile */
   }
 
   .section-center {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem; /* Adjust padding for all section-center elements */
   }
 
   /* --- Services Page Adjustments --- */
@@ -373,12 +372,16 @@ footer {
   .about-intro h1,
   .why-choose h2,
   .about-values h2 {
-    font-size: 1.75rem;
+    font-size: 1.75rem; /* Slightly smaller headings on mobile */
   }
 
   .about-intro p,
   .why-choose p {
     font-size: 1rem;
+  }
+
+  .about-values ul.value-list li {
+    text-align: left; /* Keep left alignment */
   }
 
   /* --- Contact Page Adjustments --- */
@@ -388,12 +391,14 @@ footer {
     font-size: 1.75rem;
   }
 
+  /* Make contact form elements full width on mobile */
   .contact-form label {
-      align-self: center;
+      align-self: center; /* Center labels when form is full width */
   }
   .contact-form input,
   .contact-form textarea {
-      padding: 0.6rem;
+      /* Already set to width: 100%; */
+      padding: 0.6rem; /* Slightly less vertical padding on mobile */
   }
 
   /* --- Blog Page Adjustments --- */
