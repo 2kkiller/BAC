@@ -429,7 +429,6 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   width: 100%;
   padding: 40px 20px;
 }
@@ -437,9 +436,11 @@ footer {
 /* Center the form itself */
 .contact-form form {
   width: 100%;
-  max-width: 500px;   /* keeps it neatly centered */
+  max-width: 700px;   /* keeps it neatly centered */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  height: 150px;
 }
+
