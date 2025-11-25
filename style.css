@@ -3,9 +3,9 @@
 ================================= */
 
 @keyframes pulseBorder {
-    0% { box-shadow: 0 0 0 0 rgba(0, 31, 92, 0.4); } /* Navy Shadow */
-    70% { box-shadow: 0 0 0 5px rgba(0, 31, 92, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 31, 92, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(255, 196, 0, 0.4); } /* Gold Shadow */
+    70% { box-shadow: 0 0 0 5px rgba(255, 196, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 196, 0, 0); }
 }
 
 @keyframes float {
@@ -19,14 +19,14 @@ body {
   font-family: Garamond, serif;
   margin: 0;
   padding: 0;
-  color: #111;
-  background-color: #f3f4f6; /* Light Gray/Off-White base background */
+  color: #F3F4F6; /* Light text for dark background */
+  background-color: #001236; /* Dark Navy Base Background */
   line-height: 1.7;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #FFC400; /* Gold links */
   transition: color 0.3s ease-in-out;
 }
 
@@ -58,7 +58,7 @@ header.site-header {
 
 /* Logo */
 .logo {
-  height: 60px; /* Standardized to 60px */
+  height: 60px;
 }
 
 /* Navigation Links */
@@ -72,9 +72,9 @@ nav {
 }
 
 .nav-links li a {
-  color: white;
+  color: #F3F4F6; /* Light text */
   font-weight: 600;
-  position: relative; /* For underline effect */
+  position: relative;
 }
 
 .nav-links li a::after {
@@ -90,7 +90,7 @@ nav {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #FFC400; /* Bright Gold accent */
+  color: #FFC400; /* Bright Gold highlight */
   text-shadow: 0 0 8px rgba(255, 196, 0, 0.7);
 }
 
@@ -110,12 +110,12 @@ nav {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #F3F4F6; /* Light color for icon */
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Toggle Styles */
+/* Toggle Styles retained */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -200,7 +200,7 @@ nav#nav-menu.active {
   border: 2px solid;
   border-image: linear-gradient(to right, #FFC400, #F0B300); /* Gold gradient border */
   border-image-slice: 1;
-  color: #001F5C; /* Navy text */
+  color: #FFC400; /* Gold text */
   background: transparent;
 }
 
@@ -214,24 +214,18 @@ nav#nav-menu.active {
 /* =============================
    SECTION BACKGROUNDS
 ============================= */
+/* All sections use Burgundy for contrast against Navy body */
 .vision-section {
-  background: #FFFFFF; /* Pure white */
+  background: #800020; /* Burgundy */
 }
 
-/* Mission section with faint Gold trace gradient */
 .mission-section {
-  background: #F3F4F6; /* Light Gray */
-  background-image: repeating-linear-gradient(
-    45deg,
-    #F3F4F6, 
-    #F3F4F6 10px, 
-    rgba(255, 196, 0, 0.05) 10px, /* Faint Gold Trace */
-    rgba(255, 196, 0, 0.05) 11px
-  );
+  background: #4d0013; /* Darker Burgundy */
+  color: #F3F4F6;
 }
 
 .values-section {
-  background: #FFFFFF; /* Pure white */
+  background: #800020; /* Burgundy */
 }
 
 .cta-section {
@@ -243,25 +237,26 @@ nav#nav-menu.active {
    VALUES LIST
 ============================= */
 .values-section ul {
-  padding-left: 0; /* Align with new centered design */
+  padding-left: 0;
 }
 
-.values-list li {
-  background: #F3F4F6; /* Light Gray background for list item */
+.value-list li {
+  background: #4d0013; /* Dark Burgundy background for list item */
   padding: 0.75rem;
   margin-bottom: 1rem;
   border-left: 4px solid;
   border-image: linear-gradient(to bottom, #FFC400, #F0B300); /* Gold gradient border */
   border-image-slice: 1;
   text-align: left;
+  color: #F3F4F6;
   transition: all 0.3s ease-in-out;
 }
 
 .value-list li:hover {
-  background: #E5E7EB; /* Slightly darker gray on hover */
+  background: #990025; /* Lighter Burgundy on hover */
   border-left-color: #FFC400;
   transform: translateX(10px);
-  box-shadow: 0 4px 10px rgba(0, 31, 92, 0.1);
+  box-shadow: 0 4px 10px rgba(255, 196, 0, 0.2);
 }
 
 
@@ -286,6 +281,7 @@ footer {
   margin: 0 auto;
   text-align: center;
   padding: 3rem 1.5rem;
+  background-color: #001236; /* Ensure section uses base dark background */
 }
 
 .contact-intro h1,
@@ -294,7 +290,7 @@ footer {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold headings */
 }
 
 .contact-intro p,
@@ -302,17 +298,18 @@ footer {
   margin-bottom: 1rem;
   font-size: 1.05rem;
   line-height: 1.6;
+  color: #F3F4F6; /* Light text */
 }
 
 .contact-details a {
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold links */
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .contact-details a:hover {
-  color: #FFC400; /* Gold on hover */
-  text-shadow: 0 0 5px rgba(255, 196, 0, 0.3);
+  color: #F0B300; /* Darker Gold on hover */
+  text-shadow: 0 0 5px rgba(255, 196, 0, 0.5);
 }
 
 .contact-form form {
@@ -326,14 +323,16 @@ footer {
 .contact-form label {
   align-self: flex-start;
   font-weight: 600;
-  color: #001F5C; /* Navy */
+  color: #F3F4F6; /* Light labels */
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #FFC400; /* Gold border for inputs */
+  background-color: #001F5C; /* Navy input background */
+  color: #FFC400; /* Gold text in inputs */
   border-radius: 6px;
   font-family: Garamond, serif;
   font-size: 1rem;
@@ -342,9 +341,9 @@ footer {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #001F5C; /* Navy focus border */
+  border-color: #FFC400; /* Gold focus border */
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 31, 92, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 196, 0, 0.3);
 }
 
 /* =============================
@@ -354,12 +353,13 @@ footer {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold headings */
 }
 
 .services-header p {
   font-size: 1.05rem;
   margin-bottom: 2rem;
+  color: #F3F4F6;
 }
 
 .service-list {
@@ -371,10 +371,10 @@ footer {
 .service-card {
   /* Added subtle float animation */
   animation: float 6s ease-in-out infinite;
-  background-color: #FFFFFF; /* White card background */
+  background-color: #4d0013; /* Dark Burgundy card background */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   border-left: 5px solid;
-  border-image: linear-gradient(to bottom, #001F5C, #003399); /* Navy gradient border */
+  border-image: linear-gradient(to bottom, #FFC400, #F0B300); /* Gold gradient border */
   border-image-slice: 1;
   border-radius: 8px;
   padding: 1.5rem;
@@ -383,24 +383,24 @@ footer {
 }
 
 .service-card:nth-child(even) {
-    animation-delay: 0.5s; /* Stagger animation */
+    animation-delay: 0.5s;
 }
 
 .service-card:hover {
-  transform: translateY(-8px); /* Increased lift on hover */
-  border-left-color: #FFC400; /* Gold hover accent */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  border-left-color: #FFC400;
+  box-shadow: 0 8px 20px rgba(255, 196, 0, 0.3); /* Gold shadow on hover */
 }
 
 .service-card h3 {
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold headings */
 }
 
 .service-card p {
   font-size: 1rem;
-  color: #333;
+  color: #F3F4F6; /* Light text */
   line-height: 1.6;
 }
 
@@ -415,7 +415,7 @@ footer {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold headings */
 }
 
 /* Paragraphs */
@@ -424,32 +424,27 @@ footer {
   font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-}
-
-/* Values List */
-.about-values ul.value-list {
-  padding-left: 0;
-  margin-top: 1.5rem;
-  text-align: center; /* Center list items for a better mobile-first layout */
+  color: #F3F4F6;
 }
 
 /* Specific About Page Value list items */
 .about-values ul.value-list li {
   margin-bottom: 1rem;
   padding: 0.75rem;
-  background: #F3F4F6; /* Light Gray */
+  background: #4d0013; /* Dark Burgundy */
   border-left: 4px solid;
   border-image: linear-gradient(to bottom, #FFC400, #F0B300); /* Gold gradient border */
   border-image-slice: 1;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
+  color: #F3F4F6;
 }
 
 .about-values ul.value-list li:hover {
-  background: #E5E7EB; /* Slightly darker gray on hover */
+  background: #990025; /* Lighter Burgundy on hover */
   border-left-color: #FFC400;
   transform: translateX(10px);
-  box-shadow: 0 4px 10px rgba(0, 31, 92, 0.1);
+  box-shadow: 0 4px 10px rgba(255, 196, 0, 0.2);
 }
 
 /* ========================================
@@ -459,14 +454,14 @@ footer {
 .blog-header h1 {
   font-size: 2rem;
   font-weight: bold;
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold headings */
   margin-bottom: 1rem;
 }
 
 .blog-header p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: #F3F4F6;
 }
 
 .blog-list {
@@ -477,9 +472,9 @@ footer {
 .blog-card {
   /* Added subtle float animation */
   animation: float 6s ease-in-out infinite;
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-left: 5px solid #001F5C; /* Navy border */
+  background: #4d0013; /* Dark Burgundy card background */
+  border: 1px solid #FFC400; /* Gold card border */
+  border-left: 5px solid #FFC400; /* Gold accent */
   border-radius: 8px;
   padding: 1.5rem;
   text-align: left;
@@ -488,24 +483,24 @@ footer {
 }
 
 .blog-card:nth-child(odd) {
-    animation-delay: 0.3s; /* Stagger animation */
+    animation-delay: 0.3s;
 }
 
 .blog-card:hover {
   transform: translateY(-8px);
-  border-left-color: #FFC400; /* Gold hover accent */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-left-color: #F0B300;
+  box-shadow: 0 8px 20px rgba(255, 196, 0, 0.3); /* Gold shadow on hover */
 }
 
 .blog-card h3 {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
-  color: #001F5C; /* Navy */
+  color: #FFC400; /* Gold headings */
 }
 
 .blog-card p {
   font-size: 1rem;
-  color: #444;
+  color: #F3F4F6; /* Light text */
   margin-bottom: 1rem;
 }
 
@@ -513,7 +508,7 @@ footer {
    RESPONSIVE STYLES (FINAL)
 ============================= */
 @media (max-width: 768px) {
-  /* --- General Mobile Adjustments (Header & Nav) --- */
+  /* ... Responsive styles retained and adapted for dark mode ... */
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
@@ -539,7 +534,6 @@ footer {
     margin-top: 1rem;
   }
 
-  /* --- Layout & Typography Adjustments --- */
   .hero h1 {
     font-size: 2rem;
   }
@@ -563,12 +557,10 @@ footer {
     padding: 2rem 1rem;
   }
 
-  /* --- Services & Blog Page Adjustments --- */
   .service-list, .blog-list {
     grid-template-columns: 1fr;
   }
 
-  /* --- Typography on Pages --- */
   .services-header h1,
   .about-intro h1,
   .why-choose h2,
@@ -585,9 +577,8 @@ footer {
     font-size: 1rem;
   }
 
-  /* --- Contact Form Adjustments --- */
   .contact-form label {
-      align-self: flex-start; /* Keep label aligned left for better UX */
+      align-self: flex-start;
   }
   .contact-form input,
   .contact-form textarea {
