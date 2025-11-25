@@ -436,12 +436,13 @@ footer {
 /* Center the form itself */
 .contact-form form {
   width: 100%;
-  max-width: 400px;   /* keeps it neatly centered */
+  max-width: 500px;   /* keeps it neatly centered */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 
 
 
