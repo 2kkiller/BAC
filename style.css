@@ -20,211 +20,28 @@ ul {
   margin: 0;
 }
 
-/* Header with Gradient: Burgundy to Darker Burgundy/Neutral */
-header.site-header {
-  background: linear-gradient(to right, #800020, #4d0013); /* Burgundy to Darker Burgundy */
-  color: white;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* =================================
+   KEYFRAMES FOR DYNAMIC ANIMATIONS
+================================= */
+
+@keyframes pulseBorder {
+    0% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0.4); }
+    70% { box-shadow: 0 0 0 5px rgba(128, 0, 32, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(128, 0, 32, 0); }
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Logo (Note: logo image remains the same, assuming it works with new colors) */
-.logo {
-  height: 60px; /* Adjusted to 60px from the second block of CSS */
-}
-
-/* Navigation Links */
-nav {
-  display: flex;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links li a {
-  color: white;
-  font-weight: 600;
-}
-
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: #ffd700; /* Gold on hover or active */
-  text-shadow: 0 0 5px rgba(128, 0, 32, 0.4); /* Shadow color based on Burgundy */
-}
-
-/* Hamburger (mobile menu icon) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Toggle Styles */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-nav#nav-menu {
-  transition: max-height 0.3s ease;
-}
-
-nav#nav-menu.active {
-  display: block;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #800020, #4d0013); /* Burgundy Gradient */
-  color: white;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Section-Specific Backgrounds */
-.vision-section {
-  background: #f9f9f9; /* Light neutral grey */
-}
-
-.mission-section {
-  background: #fff8e1; /* Very light gold/cream to replace fef6e4 */
-}
-
-.values-section {
-  background: #fdf0f2; /* Very light pink/burgundy tint to replace f1f5ff */
-}
-
-.cta-section {
-  background: linear-gradient(to right, #4d0013, #800020); /* Darker Burgundy to Burgundy */
-  color: white;
-}
-
-/* Buttons */
-.btn, .btn-outline {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* Gradient Button */
-.btn {
-  background: linear-gradient(to right, #800020, #a00028); /* Burgundy gradient */
-  color: white;
-  border: none;
-}
-
-.btn:hover {
-  background: linear-gradient(to right, #5e0017, #c10030);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Outline Button */
-.btn-outline {
-  border: 2px solid #800020; /* Burgundy border */
-  color: #800020; /* Burgundy text */
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: #800020; /* Burgundy background on hover */
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Values list */
-.values-section ul {
-  padding-left: 1rem;
-}
-
-.values-section li {
-  margin-bottom: 0.5rem;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(to right, #800020, #4d0013); /* Burgundy gradient */
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-.img{
-    color: #afbedd; /* This seems unused, keeping it */
-    background-color: white;
-}
-
-/* =============================
-   RESET & BASE STYLES (Second Block - cleaned up)
-============================= */
-body {
-  font-family: Garamond, serif;
-  margin: 0;
-  padding: 0;
-  color: #111;
-  background-color: #fff; /* Changed from e0e5ec to white */
-  line-height: 1.7;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease-in-out;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
 }
 
 /* =============================
    HEADER & NAVIGATION
 ============================= */
+/* Header with Dynamic Burgundy Gradient */
 header.site-header {
-  background: linear-gradient(to right, #800020, #4d0013); /* Burgundy gradient */
+  background: linear-gradient(90deg, #800020 0%, #4d0013 70%, #990025 100%);
   color: white;
   padding: 1rem 2rem;
   position: sticky;
@@ -243,10 +60,6 @@ header.site-header {
   height: 60px;
 }
 
-nav {
-  display: flex;
-}
-
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -259,18 +72,17 @@ nav {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #ffd700; /* Gold */
-  text-shadow: 0 0 5px rgba(128, 0, 32, 0.4);
+  color: #ffd700; /* Gold on hover or active */
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Brighter gold shadow */
 }
 
-/* Hamburger Menu (Mobile) */
+/* Hamburger (mobile menu icon) styles retained */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
 }
-
 .hamburger span {
   width: 25px;
   height: 3px;
@@ -279,32 +91,16 @@ nav {
   transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-nav#nav-menu {
-  transition: max-height 0.3s ease;
-}
-
-nav#nav-menu.active {
-  display: block;
-}
-
 /* =============================
    HERO SECTION
 ============================= */
+/* Hero with Dynamic Burgundy Gradient */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, #800020, #4d0013); /* Burgundy Gradient */
+  background: linear-gradient(135deg, #800020, #a00028, #4d0013); 
   color: white;
+  animation: pulseBorder 4s infinite; /* Dynamic animation added */
 }
 
 .hero h1 {
@@ -342,29 +138,34 @@ nav#nav-menu.active {
   text-align: center;
 }
 
+/* Gradient Button (Primary Burgundy) */
 .btn {
-  background: linear-gradient(to right, #800020, #a00028); /* Burgundy gradient */
+  background: linear-gradient(to right, #800020, #a00028); 
   color: white;
   border: none;
+  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.4);
 }
 
 .btn:hover {
-  background: linear-gradient(to right, #5e0017, #c10030);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #c10030, #5e0017);
+  transform: translateY(-3px); /* Increased lift */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Outline Button (Gold Accent Border) */
 .btn-outline {
-  border: 2px solid #800020; /* Burgundy border */
+  border: 2px solid;
+  border-image: linear-gradient(to right, #ffd700, #ffc400); /* Gold gradient border */
+  border-image-slice: 1;
   color: #800020; /* Burgundy text */
   background: transparent;
 }
 
 .btn-outline:hover {
   background: #800020; /* Burgundy background on hover */
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffd700; /* Gold text on hover */
+  transform: translateY(-3px); /* Increased lift */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* =============================
@@ -385,21 +186,11 @@ nav#nav-menu.active {
 }
 
 /* =============================
-   VALUES LIST
-============================= */
-.values-section ul {
-  padding-left: 1rem;
-}
-
-.values-section li {
-  margin-bottom: 0.5rem;
-}
-
-/* =============================
    FOOTER
 ============================= */
+/* Footer with Dynamic Burgundy Gradient */
 footer {
-  background: linear-gradient(to right, #800020, #4d0013);
+  background: linear-gradient(90deg, #800020 0%, #4d0013 70%, #990025 100%);
   color: white;
   text-align: center;
   padding: 1rem;
@@ -408,126 +199,117 @@ footer {
 /* =============================
    CONTACT PAGE
 ============================= */
-.contact-intro,
-.contact-details,
-.contact-form {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 3rem 1.5rem;
-}
 
 .contact-intro h1,
 .contact-details h2,
 .contact-form h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #800020;
-}
-
-.contact-intro p,
-.contact-details p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  color: #800020; /* Burgundy */
 }
 
 .contact-details a {
-  color: #800020;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  color: #800020; /* Burgundy */
 }
 
 .contact-details a:hover {
-  color: #ffd700;
-  text-shadow: 0 0 5px rgba(128, 0, 32, 0.3);
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  color: #ffd700; /* Gold on hover */
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
 }
 
 .contact-form label {
-  align-self: flex-start;
-  font-weight: 600;
-  color: #800020;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: Garamond, serif;
-  font-size: 1rem;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  color: #800020; /* Burgundy */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #800020;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.1);
+  box-shadow: 0 0 0 3px rgba(128, 0, 32, 0.3); /* Softer focus shadow */
 }
 
 /* =============================
    SERVICES PAGE
 ============================= */
 .services-header h1 {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #800020;
-}
-
-.services-header p {
-  font-size: 1.05rem;
-  margin-bottom: 2rem;
-}
-
-.service-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  color: #800020; /* Burgundy */
 }
 
 .service-card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-left: 5px solid #800020;
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: all 0.3s ease-in-out;
-  text-align: left;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  /* Added subtle float animation */
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 5px solid;
+  border-image: linear-gradient(to bottom, #800020, #c10030); /* Burgundy gradient border */
+  border-image-slice: 1;
+}
+
+.service-card:nth-child(even) {
+    animation-delay: 0.5s; /* Stagger animation */
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); /* Increased lift on hover */
   border-left-color: #ffd700;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .service-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
   color: #800020;
 }
 
-.service-card p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
+/* =============================
+   ABOUT & HOME VALUES LIST
+============================= */
+.section-center h2 {
+  color: #800020; /* Burgundy */
+}
+
+.value-list li {
+  background: #fdf0f2;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, #ffd700, #ffc400); /* Gold gradient border */
+  border-image-slice: 1;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+
+.value-list li:hover {
+  background: #f3e6e8;
+  border-left-color: #ffd700;
+  transform: translateX(10px); /* Increased horizontal movement */
+  box-shadow: 0 4px 10px rgba(128, 0, 32, 0.1);
+}
+
+/* ========================================
+   BLOG PAGE STYLES
+=========================================== */
+.blog-header h1 {
+  color: #800020;
+}
+
+.blog-card {
+  /* Added subtle float animation */
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 5px solid #800020;
+}
+
+.blog-card:nth-child(odd) {
+    animation-delay: 0.3s; /* Stagger animation */
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  border-left-color: #ffd700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card h3 {
+  color: #800020;
 }
 
 /* =============================
-   RESPONSIVE STYLES
+   RESPONSIVE STYLES (Retained and Cleaned Up)
 ============================= */
 @media (max-width: 768px) {
   /* --- General Mobile Adjustments (Header & Nav) --- */
@@ -599,7 +381,7 @@ footer {
   }
 
   .about-values ul.value-list li {
-    text-align: center; /* Center align list items on small screens for better reading */
+    text-align: left; /* Keep left alignment */
   }
 
   /* --- Contact Page Adjustments --- */
@@ -637,172 +419,6 @@ footer {
 
 @media (min-width: 1200px) {
   .service-list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-
-/* ========================================
-   ABOUT PAGE STYLING
-=========================================== */
-
-/* Reuse central section layout */
-.section-center {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-/* Headings */
-.about-intro h1,
-.why-choose h2,
-.about-values h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #800020; /* Burgundy */
-}
-
-/* Paragraphs */
-.about-intro p,
-.why-choose p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-/* Values List */
-.about-values ul.value-list {
-  padding-left: 1rem;
-  margin-top: 1.5rem;
-  text-align: left;
-}
-
-/* Specific About Page Value list items */
-.about-values ul.value-list li {
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  background: #fdf0f2; /* Light burgundy tint */
-  border-left: 4px solid #800020; /* Burgundy solid border */
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-}
-
-.about-values ul.value-list li:hover {
-  background: #f3e6e8; /* Slightly darker tint on hover */
-  border-left-color: #ffd700; /* Gold hover accent */
-  transform: translateX(5px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Page-wide centering utility (redundant, but keeping for consistency) */
-.section-center {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-/* Value list hover effect (General rule for index.html values list) */
-.value-list li {
-  background: #fdf0f2; /* Light burgundy tint */
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid #800020; /* Burgundy solid border */
-  border-radius: 4px;
-  text-align: left;
-  transition: all 0.3s ease-in-out;
-}
-
-.value-list li:hover {
-  background: #f3e6e8; /* Slightly darker tint on hover */
-  border-left-color: #ffd700; /* Gold hover accent */
-  transform: translateX(5px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Section Centering Utility (redundant, but keeping for consistency) */
-.section-center {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.section-center h2 {
-  color: #800020; /* Burgundy */
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.section-center p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-/* ========================================
-   BLOG PAGE STYLES
-=========================================== */
-
-.blog-header h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #800020; /* Burgundy */
-  margin-bottom: 1rem;
-}
-
-.blog-header p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.blog-list {
-  display: grid;
-  gap: 2rem;
-}
-
-.blog-card {
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-left: 5px solid #800020; /* Burgundy border */
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: left;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-  border-left-color: #ffd700; /* Gold hover accent */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-.blog-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: #800020; /* Burgundy */
-}
-
-.blog-card p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1rem;
-}
-
-/* Responsive Layout */
-@media (min-width: 768px) {
-  .blog-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1200px) {
-  .blog-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
