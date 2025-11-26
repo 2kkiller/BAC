@@ -4,91 +4,150 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | Bunmi Adelugba & Co.</title>
-
   <link rel="stylesheet" href="style.css"/>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
+
+  <div class="bg-circles-container">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <header id="navbar">
     <div class="nav-container">
-      <img src="assets/bac logo.jpg" alt="BAC Logo" class="logo" />
+      <img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo"/>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index_test.html">Home</a></li>
+          <li><a href="about_test.html">About</a></li>
+          <li><a href="services_test.html" class="active">Services</a></li>
+          <li><a href="blog_test.html">Blog</a></li>
+          <li><a href="contact_test.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </nav>
     </div>
   </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Services Header -->
-    <section class="services-header section-center" data-aos="fade-up">
-      <h1>Our Services</h1>
-      <p>Explore the full range of professional services offered by Bunmi Adelugba & Co.</p>
-    </section>
+  <section class="services-hero" data-aos="fade-up">
+    <h1>Our Services</h1>
+    <p>Reliable accounting, auditing, and tax solutions for businesses and individuals.</p>
+  </section>
 
-    <!-- Services List -->
-    <section class="service-list section-center">
-      <div class="service-card" data-aos="fade-right">
-        <h3>Statutory & Internal Audits</h3>
-        <p>We conduct thorough, standards-compliant audits that provide transparency and strengthen your financial credibility.</p>
+  <section class="section services-grid">
+    <h2 data-aos="fade-up">What We Offer</h2>
+    <div class="card-grid">
+
+      <div class="card" data-aos="fade-up">
+        <div class="icon-box"><i class="fas fa-search"></i></div>
+        <h3>Audit & Assurance</h3>
+        <p>Independent evaluations to strengthen financial reporting and ensure compliance.</p>
       </div>
 
-      <div class="service-card" data-aos="fade-left">
-        <h3>Accounting System Design & Bookkeeping</h3>
-        <p>From setup to daily entries, we offer fully outsourced accounting services tailored to your business model.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="150">
+        <div class="icon-box"><i class="fas fa-file-invoice"></i></div>
+        <h3>Tax Advisory</h3>
+        <p>Tax planning and filing designed to help you stay compliant and reduce liabilities.</p>
       </div>
 
-      <div class="service-card" data-aos="fade-right">
-        <h3>Tax Compliance & Advisory</h3>
-        <p>Let us handle PAYE, VAT, CIT, and other tax obligations while offering strategic tax planning insights.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon-box"><i class="fas fa-calculator"></i></div>
+        <h3>Accounting Services</h3>
+        <p>Professional bookkeeping, financial reporting, and system setup tailored to you.</p>
       </div>
 
-      <div class="service-card" data-aos="fade-left">
-        <h3>Financial & Management Consulting</h3>
-        <p>We advise on budgeting, cost optimization, forecasting, and strategic planning for growth and risk control.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="450">
+        <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+        <h3>Business Advisory</h3>
+        <p>Insightful guidance to help clients make informed decisions and achieve growth.</p>
       </div>
 
-      <div class="service-card" data-aos="fade-right">
-        <h3>NGO Audit Services</h3>
-        <p>We specialize in donor compliance, grant auditing, and risk assessments tailored to nonprofit organizations.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="600">
+        <div class="icon-box"><i class="fas fa-users"></i></div>
+        <h3>Payroll Management</h3>
+        <p>Reliable payroll preparation, deductions processing, and compliance documentation.</p>
       </div>
 
-      <div class="service-card" data-aos="fade-left">
-        <h3>Payroll Structuring & Administration</h3>
-        <p>Ensure accurate payroll computation, tax withholding, and reporting that keeps your business compliant.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="750">
+        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+        <h3>Internal Control</h3>
+        <p>Evaluation of internal processes to improve efficiency and prevent fraud.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="service-card" data-aos="fade-right">
-        <h3>Business Registration & CAC Services</h3>
-        <p>We handle company formation, business name registration, annual return filing, and corporate secretarial duties.</p>
-      </div>
+  <section class="section services-cta" data-aos="fade-up">
+    <div class="center-btn-wrapper" style="text-align:center;">
+        <h2>Need Professional Guidance?</h2>
+        <p style="margin-bottom: 20px;">We’re ready to help you manage your finances, taxes, and compliance needs.</p>
+        <a href="contact_test.html" class="btn">Contact Us</a>
+    </div>
+  </section>
 
-      <div class="service-card" data-aos="fade-left">
-        <h3>QuickBooks Installation & Training</h3>
-        <p>We provide setup, configuration, and customized training for QuickBooks accounting software.</p>
-      </div>
-
-      <div class="service-card" data-aos="fade-up">
-        <h3>Staff Recruitment & Training</h3>
-        <p>We support you in hiring and training finance staff with practical, job-ready skills and compliance knowledge.</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Bunmi Adelugba & Co. — Chartered Accountants & Tax Practitioners.</p>
+    <p>© 2025 Bunmi Adelugba & Co. — Chartered Accountants & Tax Practitioners</p>
   </footer>
 
-  <!-- AOS Animation -->
+  <div class="cursor-dot" data-cursor-dot></div>
+  <div class="cursor-outline" data-cursor-outline></div>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    
+    const ham = document.getElementById("hamburger");
+    const menu = document.getElementById("mobile-menu");
+    if (ham && menu) {
+      ham.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        ham.classList.toggle("active");
+      });
+    }
+
+    const cursorDot = document.querySelector('[data-cursor-dot]');
+    const cursorOutline = document.querySelector('[data-cursor-outline]');
+    const hoverTargets = document.querySelectorAll('a, button, .card, input, textarea');
+
+    window.addEventListener('mousemove', function (e) {
+      const posX = e.clientX;
+      const posY = e.clientY;
+      if (cursorDot) {
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+      }
+      if (cursorOutline) {
+        cursorOutline.animate({
+          left: `${posX}px`,
+          top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+      }
+    });
+
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+    });
+
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      });
+    });
+  </script>
 </body>
 </html>
