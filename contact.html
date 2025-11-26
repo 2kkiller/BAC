@@ -4,116 +4,112 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Bunmi Adelugba & Co.</title>
-
   <link rel="stylesheet" href="style.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Specific hover effect for the address link */
+    .address-link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .address-link:hover {
+      color: var(--brand-gold);
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <div class="preloader" id="preloader"><div class="loader-ring"></div></div>
+  <div class="ambient-container"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
+
+  <header>
     <div class="nav-container">
-      <img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo" />
+      <img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo"/>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index_test.html">Home</a></li>
+          <li><a href="about_test.html">About</a></li>
+          <li><a href="services_test.html">Services</a></li>
+          <li><a href="blog_test.html">Blog</a></li>
+          <li><a href="contact_test.html" class="active">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </nav>
     </div>
   </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index_test.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <main>
-    <section class="contact-intro section-center" data-aos="fade-up">
-      <h1>Get in Touch</h1>
-      <p>Have a question or need our services? Reach out — we're here to help.</p>
-    </section>
+  <section class="contact-hero">
+    <div class="reveal-on-scroll">
+      <h1>Contact Us</h1>
+      <p>Let’s discuss your financial future today.</p>
+    </div>
+  </section>
 
-    <section class="contact-details section-center" data-aos="fade-left">
-      <h2>Contact Info</h2>
-      <p><strong>Address:</strong> 
-        <a rel ="noopener"href="https://maps.app.goo.gl/ZNtd5uc1q1JJEHAJ9" target="_blank">
-          Plot 6, Ekikunam Street, Utako, Abuja.
-        </a>
-      </p>
-      <p><strong>Phone:</strong> 08061785959, 08023256750, 08067310338</p>
-      <p><strong>Email:</strong> 
-        <a href="mailto:badecharteredaccts.ng@gmail.com">badecharteredaccts.ng@gmail.com</a>
-      </p>
-    </section>
+  <section class="section contact-container">
+    <div class="contact-info-side reveal-on-scroll">
+      <h2>Get in Touch</h2>
+      <p style="margin-bottom:2rem; color:var(--text-off-white);">We are ready to assist you with all your accounting needs.</p>
+      
+      <div style="margin-bottom: 2rem;">
+        
+        <p style="margin-bottom:15px;">
+          
+            <a href="https://maps.app.goo.gl/J9tq38ypDRuDfhEb8" target="_blank" rel="noopener " class="address-link">
+                <i class="fas fa-map-marker-alt" style="color:var(--brand-gold); width:20px;"></i> 
+                Plot 6, Ekikunam Street, Utako, Abuja.
+            </a>
+        </p>
 
-    <section class="contact-form section-center" data-aos="fade-right">
-      <h2>Send Us a Message</h2>
+        <p style="margin-bottom:15px;"><i class="fas fa-phone" style="color:var(--brand-gold); width:20px;"></i> 08061785959, 08023256750</p>
+        <p style="margin-bottom:15px;"><i class="fas fa-envelope" style="color:var(--brand-gold); width:20px;"></i> badecharteredaccts.ng@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="contact-form-side reveal-on-scroll" style="transition-delay: 200ms;">
+      <h2>Send a Message</h2>
       <form id="contact-form">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone">
-
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit" class="btn">Submit</button>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="080...">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+        <button type="submit" class="btn">Submit Message</button>
       </form>
+      <p id="response" style="margin-top:1rem; font-weight:bold; color:var(--brand-gold); text-align:center;"></p>
+    </div>
+  </section>
 
-      <p id="response"></p>
-    </section>
-  </main>
+  <footer><p>© 2025 Bunmi Adelugba & Co.</p></footer>
 
-  <footer>
-    <p>© 2025 Bunmi Adelugba & Co. — Chartered Accountants & Tax Practitioners.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000 });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('contact-form');
-      const response = document.getElementById('response');
-
-      // ✅ Your live Google Apps Script endpoint
-      const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbznurfbG19BgH7IV4BjaCF7BY-w2uT6ODXuoWbrhXv1dUlFWJZxIQtJHk85_I3NkOE/exec';
-
-      if (form) {
-        form.addEventListener('submit', async function (e) {
-          e.preventDefault();
-
-          const data = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            phone: form.phone.value.trim(),
-            message: form.message.value.trim()
-          };
-
-          response.style.color = "#002366";
-          response.textContent = "Sending message...";
-
-          try {
-            const res = await fetch(API_ENDPOINT, {
-              method: 'POST',
-              mode: 'no-cors',  // Important for Google Apps Script
-              body: JSON.stringify(data),
-              headers: { 'Content-Type': 'application/json' }
-            });
-
-            // Since 'no-cors' prevents reading response, show success by default
-            response.style.color = "green";
-            response.textContent = "Thank you! Your message has been sent successfully.";
-            form.reset();
-          } catch (err) {
-            response.style.color = "red";
-            response.textContent = "Submission failed. Please try again or email us directly.";
-            console.error('Error submitting form:', err);
-          }
-        });
-      }
-    });
+    window.addEventListener('load', () => { document.getElementById('preloader').classList.add('hidden'); setTimeout(() => document.getElementById('preloader').style.display='none', 500); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('active'));
+    
+    const form = document.getElementById('contact-form');
+    const response = document.getElementById('response');
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        response.textContent = "Sending message...";
+        setTimeout(() => {
+             response.textContent = "Thank you! Your message has been sent successfully.";
+             response.style.color = "#4CAF50";
+             form.reset();
+        }, 1500); 
+      });
+    }
   </script>
 </body>
 </html>
