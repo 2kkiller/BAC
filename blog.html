@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog | Bunmi Adelugba & Co.</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
+
+  <div class="bg-circles-container">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <header id="navbar">
     <div class="nav-container">
-      <img src="assets/bac logo.jpg" alt="BAC Logo" class="logo" />
+      <img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo"/>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="index_test.html">Home</a></li>
+          <li><a href="about_test.html">About</a></li>
+          <li><a href="services_test.html">Services</a></li>
+          <li><a href="blog_test.html" class="active">Blog</a></li>
+          <li><a href="contact_test.html">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </nav>
     </div>
   </header>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <!-- Main Content -->
-  <main>
-    <section class="blog-header section-center" data-aos="fade-down">
-      <h1>Latest Insights & Financial Advice</h1>
-      <p>Explore our articles, tips, and expert opinions on accounting, taxation, business strategy, and financial management.</p>
-    </section>
+  <section class="blog-hero" data-aos="fade-up">
+    <h1>Insights & Updates</h1>
+    <p>Latest news, articles, and resources about accounting, taxes, and business advisory.</p>
+  </section>
 
-    <section class="blog-list section-center">
-      <!-- Blog Card 1 -->
-      <div class="blog-card" data-aos="fade-up">
-        <h3>5 Common Tax Mistakes Businesses Make (and How to Avoid Them)</h3>
-        <p>
-          Navigating corporate taxes can be tricky — even experienced businesses make costly mistakes. Here’s how to avoid them...
-        </p>
-        <a href="#" class="btn-outline">Read More</a>
+  <section class="section blog-grid">
+    <div class="card-grid">
+
+      <div class="card" data-aos="fade-up">
+        <h3>Understanding Tax Compliance in 2025</h3>
+        <p>Learn how new tax regulations affect small businesses and individuals in Nigeria.</p>
+        <br>
+        <a href="#" class="btn btn-outline small-btn">Read More</a>
       </div>
 
-      <!-- Blog Card 2 -->
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>What to Know Before Registering a Business in Nigeria</h3>
-        <p>
-          Starting a business? We break down what CAC registration involves and how to avoid delays and rejection...
-        </p>
-        <a href="#" class="btn-outline">Read More</a>
+      <div class="card" data-aos="fade-up" data-aos-delay="150">
+        <h3>Audit Best Practices for SMEs</h3>
+        <p>Key steps to prepare your financial statements and internal controls for smooth audits.</p>
+        <br>
+        <a href="#" class="btn btn-outline small-btn">Read More</a>
       </div>
 
-      <!-- Blog Card 3 -->
-      <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>How to Choose the Right Accounting Software for Your SME</h3>
-        <p>
-          From QuickBooks to Zoho, learn which platform fits your industry and workflow best — and what to look out for...
-        </p>
-        <a href="#" class="btn-outline">Read More</a>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Streamlining Payroll Processes</h3>
+        <p>Tips to automate payroll, reduce errors, and maintain compliance with Nigerian labor laws.</p>
+        <br>
+        <a href="#" class="btn btn-outline small-btn">Read More</a>
       </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2025 Bunmi Adelugba & Co. | Chartered Accountants & Tax Practitioners. All rights reserved.</p>
+      <div class="card" data-aos="fade-up" data-aos-delay="450">
+        <h3>Financial Advisory: Growing Your Business</h3>
+        <p>How advisory services can help your business scale effectively while managing risks.</p>
+        <br>
+        <a href="#" class="btn btn-outline small-btn">Read More</a>
+      </div>
+
     </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Bunmi Adelugba & Co. — Chartered Accountants & Tax Practitioners</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 800 });
+    const ham = document.getElementById("hamburger");
+    const menu = document.getElementById("mobile-menu");
+    ham.addEventListener("click", () => {
+      menu.classList.toggle("open");
+      ham.classList.toggle("active");
+    });
   </script>
 </body>
 </html>
