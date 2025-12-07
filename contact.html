@@ -27,22 +27,22 @@
       <img src="https://raw.githubusercontent.com/2kkiller/BAC_TEMPORARY_HOSTING/refs/heads/main/bac%20logo.jpg" alt="BAC Logo" class="logo"/>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="index_test.html">Home</a></li>
+          <li><a href="about_test.html">About</a></li>
+          <li><a href="services_test.html">Services</a></li>
+          <li><a href="blog_test.html">Blog</a></li>
+          <li><a href="contact_test.html" class="active">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </nav>
     </div>
   </header>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
+    <a href="index_test.html">Home</a>
+    <a href="about_test.html">About</a>
+    <a href="services_test.html">Services</a>
+    <a href="blog_test.html">Blog</a>
+    <a href="contact_test.html">Contact</a>
   </div>
 
   <section class="contact-hero">
@@ -69,6 +69,10 @@
         <p style="margin-bottom:15px;"><i class="fas fa-phone" style="color:var(--brand-gold); width:20px;"></i> 08061785959, 08023256750</p>
         <p style="margin-bottom:15px;"><i class="fas fa-envelope" style="color:var(--brand-gold); width:20px;"></i> badecharteredaccts.ng@gmail.com</p>
       </div>
+      
+      <div style="height:250px; border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
+        <iframe src="https://maps.app.goo.gl/ZNtd5uc1q1JJEHAJ9" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen></iframe>
+      </div>
     </div>
 
     <div class="contact-form-side reveal-on-scroll" style="transition-delay: 200ms;">
@@ -91,7 +95,7 @@
   <footer><p>© 2025 Bunmi Adelugba & Co.</p></footer>
 
   <script>
-    // 1. ANIMATIONS & LOADER
+    // 1. UI LOADER & ANIMATIONS
     window.addEventListener('load', () => { 
         document.getElementById('preloader').classList.add('hidden'); 
         setTimeout(() => document.getElementById('preloader').style.display='none', 500); 
@@ -105,18 +109,20 @@
     document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('active'));
     
     // 2. FORM SUBMISSION LOGIC
-    // Your specific Google Apps Script URL
+    // ==========================================
+    // UPDATED WEB APP URL
+    // ==========================================
     const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyk6wjhDAUqb_k3S4kLZsP1pI4hFi57auw_r0TgZ8x5zoc2ceDgNztnrJ1QXi1j168/exec';
 
     const form = document.getElementById('contact-form');
     const response = document.getElementById('response');
-    const submitBtn = form.querySelector('button'); // Get the button to disable it during send
+    const submitBtn = form.querySelector('button');
 
     if (form) {
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         
-        // UI Feedback: Show loading state
+        // UI Feedback
         response.textContent = "Sending message...";
         response.style.color = "var(--brand-gold)";
         submitBtn.disabled = true;
@@ -131,27 +137,24 @@
         };
 
         try {
-          // Send Data to Google Script
           await fetch(API_ENDPOINT, {
             method: 'POST',
-            mode: 'no-cors', // Essential: Tells browser to ignore CORS policy for this request
-            headers: { 'Content-Type': 'text/plain' }, // Essential: Avoids "Preflight" check
+            mode: 'no-cors', // Essential for Google Apps Script
+            headers: { 'Content-Type': 'text/plain' }, // Essential to avoid CORS errors
             body: JSON.stringify(data)
           });
 
           // Success State
-          // Note: With 'no-cors', we can't read the response status, so if no error is thrown, we assume success.
           response.textContent = "Thank you! Your message has been sent successfully.";
-          response.style.color = "#4CAF50"; // Green color
+          response.style.color = "#4CAF50"; 
           form.reset();
 
         } catch (err) {
           // Error State
-          console.error('Submission Error:', err);
+          console.error(err);
           response.textContent = "Submission failed. Please try again later.";
           response.style.color = "red";
         } finally {
-          // Reset Button State
           submitBtn.disabled = false;
           submitBtn.textContent = "Submit Message";
         }
