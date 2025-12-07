@@ -60,8 +60,7 @@
       <div style="margin-bottom: 2rem;">
         
         <p style="margin-bottom:15px;">
-          
-            <a href="https://maps.app.goo.gl/J9tq38ypDRuDfhEb8" target="_blank" rel="noopener " class="address-link">
+            <a href="https://maps.app.goo.gl/J9tq38ypDRuDfhEb8" target="_blank" rel="noopener" class="address-link">
                 <i class="fas fa-map-marker-alt" style="color:var(--brand-gold); width:20px;"></i> 
                 Plot 6, Ekikunam Street, Utako, Abuja.
             </a>
@@ -92,25 +91,72 @@
   <footer><p>© 2025 Bunmi Adelugba & Co.</p></footer>
 
   <script>
-    window.addEventListener('load', () => { document.getElementById('preloader').classList.add('hidden'); setTimeout(() => document.getElementById('preloader').style.display='none', 500); });
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    // 1. ANIMATIONS & LOADER
+    window.addEventListener('load', () => { 
+        document.getElementById('preloader').classList.add('hidden'); 
+        setTimeout(() => document.getElementById('preloader').style.display='none', 500); 
+    });
+    
+    const observer = new IntersectionObserver((entries) => { 
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); 
+    }, { threshold: 0.1 });
+    
     document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
     document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('active'));
     
+    // 2. FORM SUBMISSION LOGIC
+    // Your specific Google Apps Script URL
+    const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyk6wjhDAUqb_k3S4kLZsP1pI4hFi57auw_r0TgZ8x5zoc2ceDgNztnrJ1QXi1j168/exec';
+
     const form = document.getElementById('contact-form');
     const response = document.getElementById('response');
+    const submitBtn = form.querySelector('button'); // Get the button to disable it during send
+
     if (form) {
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
+        
+        // UI Feedback: Show loading state
         response.textContent = "Sending message...";
-        setTimeout(() => {
-             response.textContent = "Thank you! Your message has been sent successfully.";
-             response.style.color = "#4CAF50";
-             form.reset();
-        }, 1500); 
+        response.style.color = "var(--brand-gold)";
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        // Collect Data
+        const data = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
+          message: form.message.value.trim()
+        };
+
+        try {
+          // Send Data to Google Script
+          await fetch(API_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors', // Essential: Tells browser to ignore CORS policy for this request
+            headers: { 'Content-Type': 'text/plain' }, // Essential: Avoids "Preflight" check
+            body: JSON.stringify(data)
+          });
+
+          // Success State
+          // Note: With 'no-cors', we can't read the response status, so if no error is thrown, we assume success.
+          response.textContent = "Thank you! Your message has been sent successfully.";
+          response.style.color = "#4CAF50"; // Green color
+          form.reset();
+
+        } catch (err) {
+          // Error State
+          console.error('Submission Error:', err);
+          response.textContent = "Submission failed. Please try again later.";
+          response.style.color = "red";
+        } finally {
+          // Reset Button State
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit Message";
+        }
       });
     }
   </script>
 </body>
 </html>
-
